@@ -1,0 +1,59 @@
+# Server settings
+server:
+  port: 8088 # 端口
+#  servlet:
+    # 设定应用的context-path
+#    context-path: hdfs
+  # HTTP请求和响应头的最大量，以字节为单位，默认值为4096字节,超过此长度的部分不予处理,一般8K。解决java.io.EOFException: null问题
+  max-http-header-size: 8192
+  # 是否应将 X-Forwarded-* 头应用于HttpRequest
+  use-forward-headers: true
+  compression:
+    # 是否开启压缩 默认false
+    enabled: true
+    # 执行压缩的阈值，默认 2048
+    min-response-size: 1024
+    # 指定不压缩的user-agent,多个以逗号分隔
+    mime-types: text/plain,text/css,text/xml,text/javascript,application/json,application/javascript,application/xml,application/xml+rss,application/x-javascript,application/x-httpd-php,image/jpeg,image/gif,image/png
+  tomcat:
+    # 设定 remote IP的header，如果remoteIpHeader有值，则设置为RemoteIpValue
+    remote-ip-header: X-Forwarded-for
+    # 设定Header包含的协议，通常是X-Forwarded-Proto,如果remoteIpHeader有值，则将设置为RemoteIpValue
+    protocol-header: X-Forwarded-Proto
+    # 设定http header使用的，用来覆盖原来的port的value
+    port-header: X-Forwarded-Port
+    # 设定URI解码字符集
+    uri-encoding: UTF-8
+    # tomcat的base目录，如果没有指定则使用临时目录
+    basedir: /var/tmp
+    # 设定tomcat最大工作线程数
+    max-threads: 1000
+
+# 服务名称
+spring:
+  application:
+    # 应用名称
+    name: hadoop-hdfs
+  servlet:
+    multipart:
+      # 最大上传文件大小
+      max-file-size: 50MB
+      # 最大请求大小 默认 10MB
+      max-request-size: 50MB
+
+# HDFS 相关配置
+hadoop:
+  # NameNode的地址
+  name-node: hdfs://hadoop01:9000
+  # Hadoop操作的用户名
+  username: hadoop
+  # 文件夹路径
+  namespace: /hadoop
+
+# 日志配置
+logging:
+  # 日志文件路径
+  file: logs/${spring.application.name}/${spring.application.name}-log.log
+  level:
+    com.george: debug #debug 是日志的级别，com.george是包名
+    root: info
