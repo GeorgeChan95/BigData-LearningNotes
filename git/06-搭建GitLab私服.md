@@ -74,7 +74,7 @@ sudo gitlab-ctl reconfigure
 sudo vim /etc/gitlab/gitlab.rb
 ```
 
-![image-20200704235742712](images/image-20200704235742712.png)
+![image-20200705113753328](images/image-20200705113753328.png)
 
 
 
@@ -84,13 +84,13 @@ sudo vim /etc/gitlab/gitlab.rb
 sudo vim /opt/gitlab/embedded/service/gitlab-rails/config/gitlab.yml
 ```
 
-![image-20200704235903026](images/image-20200704235903026.png)
+![image-20200705113621883](images/image-20200705113621883.png)
 
 
 
 #### window中的host映射
 
-![image-20200705000103889](images/image-20200705000103889.png)
+![image-20200705113905257](images/image-20200705113905257.png)
 
 
 
@@ -122,10 +122,6 @@ sudo gitlab-ctl start
 ![image-20200705001903662](images/image-20200705001903662.png)
 
 ![image-20200705001959000](images/image-20200705001959000.png)
-
-
-
-
 
 ### 开机自启动设置
 
