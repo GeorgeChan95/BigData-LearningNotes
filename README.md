@@ -15,4 +15,5 @@
 - redis
 - mysql
 - git
-- jvm&juc
+- juc
+- jvm
