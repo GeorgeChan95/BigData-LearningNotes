@@ -17,3 +17,4 @@
 - git
 - juc
 - jvm
+- shell
